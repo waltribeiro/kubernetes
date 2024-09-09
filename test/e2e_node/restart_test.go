@@ -307,7 +307,7 @@ var _ = SIGDescribe("Restart", framework.WithSerial(), framework.WithSlow(), fra
 			framework.ExpectNoError(err, "failed to see event that pod (%s/%s) enter succeeded phase: %v", pod.Namespace, pod.Name, err)
 
 			// As soon as the pod enters succeeded phase (detected by the watch above); kill the kubelet.
-			// This is a bit racy, but the goal is to stop the kubelet before the kubelet is able to delete the pod from the API-sever in order to repro https://issues.k8s.io/116925
+			// This is a bit racy, but the goal is to stop the kubelet before the kubelet is able to delete the pod from the API-server in order to repro https://issues.k8s.io/116925
 			ginkgo.By("Stopping the kubelet")
 			startKubelet := stopKubelet()
 			// wait until the kubelet health check will fail

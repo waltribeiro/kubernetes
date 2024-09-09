@@ -43,7 +43,7 @@ type UserProvidedDecorator interface {
 //
 // This function handles the following three casses.
 //   - The inner ResponseWriter implements `http.CloseNotifier`, `http.Flusher`,
-//     and `http.Hijacker` (an HTTP/1.1 sever provides such a ResponseWriter).
+//     and `http.Hijacker` (an HTTP/1.1 server provides such a ResponseWriter).
 //   - The inner ResponseWriter implements `http.CloseNotifier` and `http.Flusher`
 //     but not `http.Hijacker` (an HTTP/2 server provides such a ResponseWriter).
 //   - All the other cases collapse to this one, in which the given ResponseWriter is returned.
@@ -64,7 +64,7 @@ func WrapForHTTP1Or2(decorator UserProvidedDecorator) http.ResponseWriter {
 	// to take over the connection.
 	// The default ResponseWriter for HTTP/1.x connections supports Hijacker, but HTTP/2 connections
 	// intentionally do not. ResponseWriter wrappers may also not support Hijacker.
-	// Handlers should always test for this ability at runtime
+	// Handlers should always test for this ability at runtime.
 	//
 	// The CloseNotifier interface is implemented by ResponseWriters which allow detecting
 	// when the underlying connection has gone away.

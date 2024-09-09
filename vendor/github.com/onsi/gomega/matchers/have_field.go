@@ -9,7 +9,7 @@ import (
 )
 
 // missingFieldError represents a missing field extraction error that
-// HaveExistingFieldMatcher can ignore, as opposed to other, sever field
+// HaveExistingFieldMatcher can ignore, as opposed to other, server field
 // extraction errors, such as nil pointers, et cetera.
 type missingFieldError string
 

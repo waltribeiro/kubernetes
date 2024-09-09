@@ -47,7 +47,7 @@ const (
 	kmsapiVersion = "v2beta1"
 )
 
-// Base64Plugin gRPC sever for a mock KMS provider.
+// Base64Plugin gRPC server for a mock KMS provider.
 // Uses base64 to simulate encrypt and decrypt.
 type Base64Plugin struct {
 	grpcServer         *grpc.Server

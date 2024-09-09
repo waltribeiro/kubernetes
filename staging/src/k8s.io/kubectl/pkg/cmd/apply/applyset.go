@@ -100,7 +100,7 @@ type ApplySet struct {
 	// toolingID is the value to be used and validated in the applyset.kubernetes.io/tooling annotation.
 	toolingID ApplySetTooling
 
-	// currentResources is the set of resources that are part of the sever-side set as of when the current operation started.
+	// currentResources is the set of resources that are part of the server-side set as of when the current operation started.
 	currentResources map[schema.GroupKind]*kindInfo
 
 	// currentNamespaces is the set of namespaces that contain objects in this applyset as of when the current operation started.
